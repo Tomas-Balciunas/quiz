@@ -88,13 +88,16 @@ const q10 = {
     {answer: "Hightext Machine Language", id: false}
 ]};
 
+const win = {q: "Congratulations, you won!"}
+
 let answers = document.querySelector(".answers");
 let rip = document.querySelector(".rip");
 let blank = document.querySelector(".blank");
 let button = document.querySelector(".begin");
 let reset = document.querySelector(".reset");
+let half = document.querySelector(".fifty");
 
-let arr = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
+let arr = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, win];
 let arrloop = arr;
 
 function clear() {
@@ -108,7 +111,8 @@ function success () {
 }
 
 function failure () {
-    blank.innerHTML = "";
+    clear();
+    blank.innerHTML = "Wrong answer";
     rip.style.display = "flex";
     arrloop = arr;
 }
@@ -131,6 +135,12 @@ function loop() {
     document.querySelector(".question").style.display = "block";
     clear();
     blank.innerHTML = arrloop[0].q;
+    for(let i = arrloop[0].answers.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * i)
+        const temp = arrloop[0].answers[i]
+        arrloop[0].answers[i] = arrloop[0].answers[j]
+        arrloop[0].answers[j] = temp
+      }
     arrloop[0].answers.forEach(element => {
         let div = document.createElement("div");
         const p = document.createElement("p");
@@ -150,6 +160,8 @@ function loop() {
                 failure();
             }
         })
+        half.addEventListener("click", function () {
+            });
     });
 };
 
