@@ -1,0 +1,114 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url(src/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .question {
+        border: solid black 2px;
+        width: 70%;
+        margin-bottom: 2em;
+        background-color: black;
+        display: none;
+        border: solid rgb(128, 109, 172) 3px;
+        border-radius: 5em;
+
+        p {
+            text-align: center;
+            margin: 2em;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .rip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+    }
+
+    .answers {
+        width: 70%;
+        height: 30%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            text-align: center;
+            margin: 1em;
+            font-size: 1.2em;
+            color: white;
+        }
+
+        div {
+            border: solid black 2px;
+            height: 4em;
+            width: 40%;
+            margin: 1em;
+            background-color: black;
+            border: solid rgb(128, 109, 172) 3px;
+            border-radius: 5em;
+        }
+
+        div:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px 10px  rgb(182, 158, 238);
+        }
+    }
+}
+
+@keyframes success {
+    0% {background-color: green}
+    50% {background-color: black}
+    100% {background-color: green}
+}
+
+.success {
+    animation: success 0.3s linear forwards;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        padding: 1em 2em 1em 2em;
+        background-color: black;
+        color: white;
+        border: solid rgb(236, 235, 159) 3px;
+        border-radius: 1em;
+        width: 20em;
+    }
+    
+    .reset {
+        display: none;
+    }
+
+    input:hover {
+        box-shadow: 0 0 10px 5px  rgb(236, 235, 159);
+    }
+
+}
+
