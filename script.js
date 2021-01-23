@@ -96,10 +96,84 @@ let blank = document.querySelector(".blank");
 let button = document.querySelector(".begin");
 let reset = document.querySelector(".reset");
 let half = document.querySelector(".fifty");
+let line = document.querySelector(".prog").querySelectorAll('*');
+let lineloop = line;
+let sk = 0;
 
 let arr = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, win];
 arrloop = JSON.parse(JSON.stringify(arr));
 
+reset.addEventListener("click", restart)
+button.addEventListener("click", loop)
+button.addEventListener("click", function() {
+    half.style.display = "block";
+    document.querySelector(".bar").style.display = "flex";
+});
+
+function loop() {
+    reset.style.display = "block";
+    button.style.display = "none";
+    document.querySelector(".question").style.display = "block";
+    clear();
+    blank.innerHTML = arrloop[0].q;
+    for (let i = arrloop[0].answers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i)
+        const temp = arrloop[0].answers[i]
+        arrloop[0].answers[i] = arrloop[0].answers[j]
+        arrloop[0].answers[j] = temp
+    }
+    arrloop[0].answers.forEach(element => {
+        let div = document.createElement("div");
+        const p = document.createElement("p");
+        p.innerHTML = element.answer;
+        answers.appendChild(div);
+        div.appendChild(p);
+
+        div.addEventListener("click", function() {
+            if ((element.id) == true) {
+                div.classList.add("success");
+                arrloop = arrloop.slice(1);
+                lineloop[sk].style.backgroundColor = "green";
+                sk++;
+                setTimeout(function() {
+                    loop();
+                }, 1000)
+            } else {
+                div.style.backgroundColor = "red";
+                failure();
+            }
+        });
+    });
+};
+
+function restart () {
+    while (arrloop.length) {
+        arrloop.pop();
+    }
+    sk = 0;
+    line.forEach(el => {
+        el.style.backgroundColor = "black";
+    })
+    arrloop = JSON.parse(JSON.stringify(arr));
+    half.style.display = "block";
+    rip.style.display = "none";
+    reset.style.display = "none";
+    button.style.display = "block";
+    document.querySelector(".question").style.display = "none";
+    loop();
+}
+
+half.addEventListener("click", function () {
+            while (arrloop[0].answers.length > 2) {
+                for (var i = 0; i < arrloop[0].answers.length; i++) {
+                    if (arrloop[0].answers[i].id == false) {
+                        arrloop[0].answers.splice(i, 1);
+                    }
+                }
+            }
+            loop();
+            half.style.display = "none";
+        });
 
 function clear() {
     while (answers.firstChild) {
@@ -114,74 +188,7 @@ function success () {
 function failure () {
     clear();
     half.style.display = "none";
-    blank.innerHTML = "Wrong answer";
+    blank.innerHTML = "You tried so hard and got so far";
     rip.style.display = "flex";
 }
-
-function restart () {
-    while (arrloop.length) {
-        arrloop.pop();
-      }
-    arrloop = JSON.parse(JSON.stringify(arr));
-    half.style.display = "block";
-    rip.style.display = "none";
-    reset.style.display = "none";
-    button.style.display = "block";
-    document.querySelector(".question").style.display = "none";
-    loop();
-}
-
-reset.addEventListener("click", restart)
-button.addEventListener("click", loop)
-button.addEventListener("click", function() {half.style.display = "block";})
-
-function loop() {
-    reset.style.display = "block";
-    button.style.display = "none";
-    document.querySelector(".question").style.display = "block";
-    clear();
-    blank.innerHTML = arrloop[0].q;
-    for(let i = arrloop[0].answers.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * i)
-        const temp = arrloop[0].answers[i]
-        arrloop[0].answers[i] = arrloop[0].answers[j]
-        arrloop[0].answers[j] = temp
-      }
-    arrloop[0].answers.forEach(element => {
-        let div = document.createElement("div");
-        const p = document.createElement("p");
-        p.innerHTML = element.answer;
-        answers.appendChild(div);
-        div.appendChild(p);
-
-        div.addEventListener("click", function(event) {
-            if ((element.id) == true) {
-                div.classList.add("success");
-                arrloop = arrloop.slice(1);
-                setTimeout(function() {
-                    loop();
-                }, 1000)
-            } else {
-                div.style.backgroundColor = "red";
-                failure();
-            }
-        });
-
-        
-    });
-};
-
-half.addEventListener("click", function () {
-            
-            while (arrloop[0].answers.length > 2) {
-                for (var i = 0; i < arrloop[0].answers.length; i++) {
-                    if (arrloop[0].answers[i].id == false) {
-                        arrloop[0].answers.splice(i, 1);
-                    }
-                }
-            }
-            loop();
-            half.style.display = "none";
-        });
-
 

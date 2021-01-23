@@ -14,8 +14,38 @@ body {
   margin: 0;
 }
 
+@-webkit-keyframes success {
+  0% {
+    background-image: radial-gradient(#236423, #144614, #003200);
+  }
+  50% {
+    background-image: radial-gradient(#323232, #141414, black);
+  }
+  100% {
+    background-image: radial-gradient(#236423, #144614, #003200);
+  }
+}
+
+@keyframes success {
+  0% {
+    background-image: radial-gradient(#236423, #144614, #003200);
+  }
+  50% {
+    background-image: radial-gradient(#323232, #141414, black);
+  }
+  100% {
+    background-image: radial-gradient(#236423, #144614, #003200);
+  }
+}
+
+.success {
+  background-image: none;
+  -webkit-animation: success 0.3s linear forwards;
+          animation: success 0.3s linear forwards;
+}
+
 .container {
-  height: 90%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,10 +65,10 @@ body {
   border: solid black 2px;
   width: 70%;
   margin-bottom: 2em;
-  background-color: black;
+  background-image: radial-gradient(#323232, #141414, black);
   display: none;
-  border: solid #806dac 3px;
-  border-radius: 5em;
+  border: solid #ececec 3px;
+  border-radius: 2em;
 }
 
 .container .question p {
@@ -59,6 +89,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   display: none;
+  margin-bottom: 2em;
 }
 
 .container .answers {
@@ -67,10 +98,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -87,48 +118,50 @@ body {
 }
 
 .container .answers div {
-  border: solid black 2px;
-  height: 4em;
   width: 40%;
   margin: 1em;
-  background-color: black;
-  border: solid #806dac 3px;
-  border-radius: 5em;
+  background-image: radial-gradient(#323232, #141414, black);
+  border: solid #ececec 3px;
+  border-radius: 2em;
 }
 
 .container .answers div:hover {
   cursor: pointer;
-  -webkit-box-shadow: 0 0 10px 10px #b69eee;
-          box-shadow: 0 0 10px 10px #b69eee;
+  -webkit-box-shadow: 0 0 10px 5px #ececec;
+          box-shadow: 0 0 10px 5px #ececec;
 }
 
-@-webkit-keyframes success {
-  0% {
-    background-color: green;
-  }
-  50% {
-    background-color: black;
-  }
-  100% {
-    background-color: green;
-  }
+.bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2em 0 5em 0;
+  width: 100%;
+  display: none;
 }
 
-@keyframes success {
-  0% {
-    background-color: green;
-  }
-  50% {
-    background-color: black;
-  }
-  100% {
-    background-color: green;
-  }
+.bar .prog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.success {
-  -webkit-animation: success 0.3s linear forwards;
-          animation: success 0.3s linear forwards;
+.bar .prog span {
+  border: solid white 2px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
+  margin: 0 1em 0 1em;
 }
 
 .buttons {
