@@ -143,7 +143,7 @@ body {
           align-items: center;
 }
 
-.buttons input {
+.buttons .begin, .buttons .reset {
   padding: 1em 2em 1em 2em;
   background-color: black;
   color: white;
@@ -152,11 +152,26 @@ body {
   width: 20em;
 }
 
+.buttons .fifty {
+  padding: 1em 2em 1em 2em;
+  background-color: black;
+  color: white;
+  border: solid #aa3737 3px;
+  border-radius: 50%;
+  display: none;
+  margin-left: 2em;
+}
+
 .buttons .reset {
   display: none;
 }
 
-.buttons input:hover {
+.buttons .fifty:hover {
+  -webkit-box-shadow: 0 0 10px 5px #aa3737;
+          box-shadow: 0 0 10px 5px #aa3737;
+}
+
+.buttons .begin:hover, .buttons .reset:hover {
   -webkit-box-shadow: 0 0 10px 5px #eceb9f;
           box-shadow: 0 0 10px 5px #eceb9f;
 }

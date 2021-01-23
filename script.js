@@ -2,7 +2,7 @@ const q1 = {
     q: "In CSS, what is the correct option to select all the tags on a page?",
     answers: [
     {answer: ".p { }", id: false},
-    {answer: "<p> { }", id: false},
+    {answer: "[p] { }", id: false},
     {answer: "p { }", id: true},
     {answer: "#p { }", id: false}
 ]};
@@ -98,7 +98,8 @@ let reset = document.querySelector(".reset");
 let half = document.querySelector(".fifty");
 
 let arr = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, win];
-let arrloop = arr;
+arrloop = JSON.parse(JSON.stringify(arr));
+
 
 function clear() {
     while (answers.firstChild) {
@@ -112,22 +113,27 @@ function success () {
 
 function failure () {
     clear();
+    half.style.display = "none";
     blank.innerHTML = "Wrong answer";
     rip.style.display = "flex";
-    arrloop = arr;
 }
 
 function restart () {
-    arrloop = arr;
+    while (arrloop.length) {
+        arrloop.pop();
+      }
+    arrloop = JSON.parse(JSON.stringify(arr));
+    half.style.display = "block";
     rip.style.display = "none";
     reset.style.display = "none";
     button.style.display = "block";
     document.querySelector(".question").style.display = "none";
-    clear();
+    loop();
 }
 
 reset.addEventListener("click", restart)
-button.addEventListener("click", loop) 
+button.addEventListener("click", loop)
+button.addEventListener("click", function() {half.style.display = "block";})
 
 function loop() {
     reset.style.display = "block";
@@ -159,12 +165,23 @@ function loop() {
                 div.style.backgroundColor = "red";
                 failure();
             }
-        })
-        half.addEventListener("click", function () {
-            });
+        });
+
+        
     });
 };
 
-
+half.addEventListener("click", function () {
+            
+            while (arrloop[0].answers.length > 2) {
+                for (var i = 0; i < arrloop[0].answers.length; i++) {
+                    if (arrloop[0].answers[i].id == false) {
+                        arrloop[0].answers.splice(i, 1);
+                    }
+                }
+            }
+            loop();
+            half.style.display = "none";
+        });
 
 

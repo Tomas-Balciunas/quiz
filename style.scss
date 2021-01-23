@@ -93,7 +93,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    input {
+    .begin, .reset {
         padding: 1em 2em 1em 2em;
         background-color: black;
         color: white;
@@ -101,12 +101,26 @@ body {
         border-radius: 1em;
         width: 20em;
     }
+
+    .fifty {
+        padding: 1em 2em 1em 2em;
+        background-color: black;
+        color: white;
+        border: solid rgb(170, 55, 55) 3px;
+        border-radius: 50%;
+        display: none;
+        margin-left: 2em;
+    }
     
     .reset {
         display: none;
     }
 
-    input:hover {
+    .fifty:hover {
+        box-shadow: 0 0 10px 5px rgb(170, 55, 55);
+    }
+
+    .begin:hover, .reset:hover {
         box-shadow: 0 0 10px 5px  rgb(236, 235, 159);
     }
 
