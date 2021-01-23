@@ -110,6 +110,8 @@ button.addEventListener("click", function() {
     document.querySelector(".bar").style.display = "flex";
 });
 
+// -------------------- main function -------------------
+
 function loop() {
     reset.style.display = "block";
     button.style.display = "none";
@@ -129,6 +131,8 @@ function loop() {
         answers.appendChild(div);
         div.appendChild(p);
 
+        //------------- answer check -----------------------
+
         div.addEventListener("click", function() {
             if ((element.id) == true) {
                 div.classList.add("success");
@@ -145,6 +149,8 @@ function loop() {
         });
     });
 };
+
+//------------------------- restart -----------------------
 
 function restart () {
     while (arrloop.length) {
@@ -163,6 +169,8 @@ function restart () {
     loop();
 }
 
+//------------------- 50:50 -----------------------------
+
 half.addEventListener("click", function () {
             while (arrloop[0].answers.length > 2) {
                 for (var i = 0; i < arrloop[0].answers.length; i++) {
@@ -174,6 +182,8 @@ half.addEventListener("click", function () {
             loop();
             half.style.display = "none";
         });
+
+//-------------------------------------------------------
 
 function clear() {
     while (answers.firstChild) {
