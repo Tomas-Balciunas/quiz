@@ -83,8 +83,8 @@ const q10 = {
     q: "What does HTML stand for?",
     answers: [
     {answer: "Hypertext and Links Markup Language", id: false},
-    {answer: "How To Make Lasagna", id: true},
-    {answer: "Hypertext Markup Language", id: false},
+    {answer: "How To Make Lasagna", id: false},
+    {answer: "Hypertext Markup Language", id: true},
     {answer: "Hightext Machine Language", id: false}
 ]};
 
