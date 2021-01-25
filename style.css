@@ -212,4 +212,8 @@ body {
   cursor: pointer;
   background-image: radial-gradient(#dda153, #d47f10);
 }
+
+input {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */
