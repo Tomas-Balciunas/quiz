@@ -69,7 +69,7 @@ body {
   background-image: radial-gradient(#323232, #141414, black);
   display: none;
   border: solid #ececec 3px;
-  border-radius: 2em;
+  border-radius: 2em / 4em;
 }
 
 .container .question p {
@@ -123,7 +123,7 @@ body {
   margin: 1em;
   background-image: radial-gradient(#323232, #141414, black);
   border: solid #ececec 3px;
-  border-radius: 2em;
+  border-radius: 1em / 2em;
 }
 
 .container .answers div:hover {
