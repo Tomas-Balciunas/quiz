@@ -17,12 +17,12 @@ const q2 = {
 ]};
 
 const q3 = {
-    q: "What is the use of 'defer' attribute?",
+    q: "Which built-in method returns the length of the string?",
     answers: [
-    {answer: "It defers rendering of html page", id: false},
-    {answer: "It defers rendering of css attributes", id: false},
+    {answer: "size()", id: false},
+    {answer: "index()", id: false},
     {answer: "None of the mentioned", id: false},
-    {answer: "It defers script execution until the page has been rendered", id: true}
+    {answer: "length()", id: true}
 ]};
 
 const q4 = {

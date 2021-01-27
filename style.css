@@ -63,7 +63,8 @@ body {
 
 .container .question {
   border: solid black 2px;
-  width: 70%;
+  width: 90%;
+  max-width: 70em;
   margin-bottom: 2em;
   margin-top: 2em;
   background-image: radial-gradient(#323232, #141414, black);
@@ -94,7 +95,8 @@ body {
 }
 
 .container .answers {
-  width: 70%;
+  width: 90%;
+  max-width: 70em;
   height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,6 +122,7 @@ body {
 
 .container .answers div {
   width: 40%;
+  max-width: 30em;
   margin: 1em;
   background-image: radial-gradient(#323232, #141414, black);
   border: solid #ececec 3px;
@@ -150,6 +153,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -181,12 +191,11 @@ body {
 }
 
 .buttons .begin, .buttons .reset {
-  padding: 1em 2em 1em 2em;
+  padding: 1em 4em 1em 4em;
   background-color: black;
   color: white;
   border: solid #d47f10 3px;
   border-radius: 1em;
-  width: 20em;
 }
 
 .buttons .fifty {
@@ -215,5 +224,251 @@ body {
 
 input {
   outline: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .container .question p {
+    font-size: 1.3em;
+  }
+  .container .answers p {
+    font-size: 1.0em;
+  }
+  .container .answers div:hover {
+    cursor: pointer;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .container .buttons .fifty:hover {
+    cursor: pointer;
+    background-image: none;
+  }
+  .container .buttons .begin:hover, .container .buttons .reset:hover {
+    cursor: pointer;
+    background-image: none;
+  }
+  .bar {
+    border-radius: 30%;
+    margin: 2em 0 4em 0;
+  }
+  .bar .prog span {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+  }
+}
+
+@media only screen and (max-width: 519px) {
+  .container {
+    height: 65%;
+  }
+  .container .question {
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+  }
+  .container .question p {
+    margin: 1.5em;
+    font-size: 1.1em;
+  }
+  .container .answers p {
+    font-size: 1em;
+  }
+  .container .answers div {
+    width: 90%;
+    max-width: 30em;
+    margin: 0.5em;
+  }
+  .bar {
+    border-radius: 10%;
+    margin: 1em 0 2em 0;
+  }
+  .bar .prog {
+    margin-top: 1em;
+  }
+  .buttons .begin, .buttons .reset {
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+  .buttons .fifty {
+    margin-left: 1em;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+}
+
+@media screen and (max-height: 800px) and (orientation: landscape) {
+  .container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 60%;
+  }
+  .container .answers div {
+    max-width: 30em;
+    margin: 0.5em;
+  }
+  .bar {
+    border-radius: 30%;
+    margin: 2em 0 4em 0;
+  }
+  .bar .prog span {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+  }
+}
+
+@media screen and (max-height: 666px) and (orientation: landscape) {
+  .container {
+    height: 70%;
+  }
+  .container .question {
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+  }
+  .container .question p {
+    margin: 1.5em;
+    font-size: 1.1em;
+  }
+  .container .answers p {
+    font-size: 1em;
+  }
+  .container .answers div {
+    margin: 0.5em;
+  }
+  .bar {
+    border-radius: 30%;
+    margin: 1em 0 1em 0;
+  }
+  .bar .prog {
+    margin-top: 1em;
+  }
+  .buttons .begin, .buttons .reset {
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+  .buttons .fifty {
+    margin-left: 1em;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+}
+
+@media screen and (max-height: 530px) and (orientation: landscape) {
+  .container {
+    height: 60%;
+  }
+}
+
+@media screen and (max-height: 430px) and (orientation: landscape) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .container {
+    width: 70%;
+    height: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .container .question p {
+    margin: 1.5em;
+    font-size: 1em;
+  }
+  body .container .answers p {
+    font-size: 0.9em;
+  }
+  body .container .answers div {
+    margin: 0.3em;
+  }
+  body .bottomcontainer {
+    width: 30%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .bottomcontainer .bar {
+    border-left: solid #d47f10 3px;
+    border-radius: 20%;
+  }
+  .begin {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+  }
+}
+
+@media screen and (max-height: 320px) and (orientation: landscape) {
+  body .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  body .bottomcontainer {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-height: 740px) and (orientation: portrait) {
+  .container {
+    height: 65%;
+  }
+  .container .answers div {
+    margin: 0.5em;
+  }
+  .bottomcontainer .bar {
+    margin: 0 0 2em 0;
+  }
+  .bottomcontainer .buttons .begin, .bottomcontainer .buttons .reset {
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+  .bottomcontainer .buttons .fifty {
+    margin-left: 1em;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+  }
+}
+
+@media screen and (max-height: 688px) and (orientation: portrait) {
+  .container {
+    height: 70%;
+  }
+  .container .question p {
+    margin: 1.5em;
+    font-size: 1em;
+  }
+  .container .answers p {
+    font-size: 0.9em;
+  }
+  .container .answers div {
+    margin: 0.3em;
+  }
+  .bottomcontainer .bar .prog span {
+    margin: 0.2em;
+  }
+  .bottomcontainer .buttons input {
+    margin-top: -1em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

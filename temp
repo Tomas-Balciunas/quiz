@@ -1,0 +1,132 @@
+@media only screen and (max-width: 890px) {
+    .container {
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+        .question {
+            border: solid black 2px;
+            width: 95%;
+            margin-bottom: 1em;
+            background-image: radial-gradient(rgb(50, 50, 50), rgb(20, 20, 20), rgb(0, 0, 0));
+            display: none;
+            border: solid rgb(236, 236, 236) 3px;
+            border-radius: 2em / 4em;
+    
+            p {
+                text-align: center;
+                margin: 1.5em;
+                font-size: 1.2em;
+                color: white;
+            }
+    
+            .rip {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+        }
+    
+        .answers {
+            width: 85%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+    
+            p {
+                text-align: center;
+                margin: 1em;
+                font-size: 1.1em;
+                color: white;
+            }
+    
+            div {
+                width: 40%;
+                background-image: radial-gradient(rgb(50, 50, 50), rgb(20, 20, 20), rgb(0, 0, 0));
+                border: solid rgb(236, 236, 236) 3px;
+                border-radius: 1em / 2em;
+            }
+    
+            div:hover {
+                cursor: pointer;
+                box-shadow: 0 0 10px 5px rgb(236, 236, 236);
+            }
+        }
+    }
+    
+    .bar {
+        display: flex;
+        justify-content: center;
+        border-top: solid rgb(212, 127, 16) 3px;
+        border-radius: 50%;
+        margin: 2em 0 5em 0;
+        width: 100%;
+        display: none;
+    
+        .prog {
+            display: flex;
+            align-items: center;
+            margin-top: 3em;
+    
+            span {
+                border: solid rgb(212, 127, 16) 2px;
+                color: white;
+                background-color: black;
+                border-radius: 50%;
+                width: 3em;
+                height: 3em;
+                text-align: center;
+                line-height: 3em;
+                margin: 0 1em 0 1em;
+            }
+        }
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .begin, .reset {
+            padding: 1em 2em 1em 2em;
+            background-color: black;
+            color: white;
+            border: solid rgb(212, 127, 16) 3px;
+            border-radius: 1em;
+            width: 20em;
+        }
+    
+        .fifty {
+            padding: 1em 2em 1em 2em;
+            background-color: black;
+            color: white;
+            border: solid rgb(212, 127, 16) 3px;
+            border-radius: 50%;
+            display: none;
+            margin-left: 4em;
+        }
+        
+        .reset {
+            display: none;
+        }
+    
+        .fifty:hover {
+            cursor: pointer;
+            background-image: radial-gradient(rgb(221, 161, 83), rgb(212, 127, 16));
+        }
+    
+        .begin:hover, .reset:hover {
+            cursor: pointer;
+            background-image: radial-gradient(rgb(221, 161, 83), rgb(212, 127, 16));
+        }
+    }
+    
+    input {
+        outline: none;
+    }
+    
+} 
