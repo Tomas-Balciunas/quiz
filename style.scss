@@ -442,21 +442,22 @@ input {
 
 @media screen and (max-height: 688px) and (orientation: portrait) {
     .container {
-        height: 70%;
+        height: 65%;
         .question {
             p {
                 margin: 1.5em;
-                font-size: 1em;
+                font-size: 0.9em;
             }
         }
 
         .answers {
             p {
-                font-size: 0.9em;
+                font-size: 0.8em;
+                margin: 0.5~;
             }
 
             div {
-            margin: 0.3em;
+            margin: 0.2em;
 
             }
         }
