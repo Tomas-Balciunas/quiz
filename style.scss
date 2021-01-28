@@ -445,15 +445,15 @@ input {
         height: 65%;
         .question {
             p {
-                margin: 1.5em;
-                font-size: 0.9em;
+                margin: 1em;
+                font-size: 0.8em;
             }
         }
 
         .answers {
             p {
-                font-size: 0.8em;
-                margin: 0.5;
+                font-size: 0.7em;
+                margin: 0.8em;
             }
 
             div {
@@ -468,6 +468,11 @@ input {
             .prog {
                 span {
                     margin: 0.2em;
+                    font-size: 0.8em;
+                    width: 1.8em;
+                    height: 1.8em;
+                    line-height: 1.8em;
+                    margin: 0.4em 0.4em 0.4em 0.4em;
                 }
             }
         }
